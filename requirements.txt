@@ -3,3 +3,6 @@ streamlit-extras
 streamlit-chat
 pydub
 openai
+google.generativeai
+ffmpeg
+ffprobe

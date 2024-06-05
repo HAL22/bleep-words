@@ -20,9 +20,9 @@ def getTranscript(audio_file):
             )
     return transcription
 
-def getBlockedWords(text):
+def getBlockedWords(text,btext):
     model = genai.GenerativeModel('gemini-1.5-flash-latest')
-    response = model.generate_content(f"Return only the  words  considered food items from the following text:{text}")
+    response = model.generate_content(btext+f"from the following text:{text}")
     return response.text
 
 def configureBlocked(text):
@@ -77,10 +77,10 @@ def createAudio(audio,dictWords):
 
     return bleeped_audio
 
-def get_bleeped_audio(audio):
+def get_bleeped_audio(audio,btext):
     transcription = getTranscript(audio)
 
-    blockedWords = getBlockedWords(transcription.text)
+    blockedWords = getBlockedWords(transcription.text,btext)
 
     words, sentance = configureBlocked(blockedWords)
 
