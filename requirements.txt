@@ -1,8 +1,6 @@
-streamlit==1.24.1
-streamlit-extras
 streamlit-chat
 pydub
 openai
 google.generativeai
-ffmpeg
 ffprobe
+ffmpeg-python
