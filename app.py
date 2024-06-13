@@ -17,6 +17,6 @@ if uploaded_file is not None and text is not None:
         temp.seek(0)
 
         audio = AudioSegment.from_file(temp.name)
-        r_audio = bl.get_bleeped_audio(audio,text)
+        r_audio = bl.get_bleeped_audio(audio,"Return only the  words  considered food items ")
         r_audio.export('bleep_audio.wav', format='wav')
 
