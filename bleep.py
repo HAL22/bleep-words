@@ -77,7 +77,7 @@ def createAudio(audio,dictWords):
 
     return bleeped_audio
 
-def get_bleeped_audio(audio,btext):
+def get_bleeped_audio(audio,btext,a):
     transcription = getTranscript(audio)
 
     blockedWords = getBlockedWords(transcription.text,btext)
@@ -88,7 +88,9 @@ def get_bleeped_audio(audio,btext):
 
     dictWords = blockingSentance(dictWords,sentance)
 
-    return createAudio(audio,dictWords)
+
+
+    return createAudio(a,dictWords)
 
 
 
