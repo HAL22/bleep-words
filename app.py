@@ -19,7 +19,7 @@ if btn:
             temp.write(uploaded_file.getvalue())
             temp.seek(0)
             a = AudioSegment.from_file(file=temp.name)
-            r_audio = bl.get_bleeped_audio(uploaded_file,"Return only the  words  considered food items ",a)
+            r_audio = bl.get_bleeped_audio(uploaded_file,text,a)
             example = r_audio.export()
             st.audio(example.read())
     
