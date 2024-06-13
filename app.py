@@ -15,8 +15,7 @@ if uploaded_file is not None and text is not None:
     with NamedTemporaryFile(suffix="wav") as temp:
         temp.write(uploaded_file.getvalue())
         temp.seek(0)
-
-        audio = AudioSegment.from_file(temp.name)
+        audio = open(temp.name, "rb")
         r_audio = bl.get_bleeped_audio(audio,"Return only the  words  considered food items ")
         r_audio.export('bleep_audio.wav', format='wav')
 
